@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 提示用户输入一个三位数，若不是三位数，则提示用户输入有误；若是三位数，则判断该数能否被13整除 */
+
+      var result = +prompt("请输入一个三位数");
+      if (isNaN(result) || result < 100 || result > 999) {
+        if (result !== null) {
+          alert("输入有误！");
+        }
+      } else {
+        if (result % 13 === 0) {
+          alert("能被13整除");
+        } else {
+          alert("不能被13整除");
+        }
+      }
+    </script>
+  </body>
+</html>
