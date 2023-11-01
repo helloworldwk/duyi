@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 编写一个用户和计算机猜拳的游戏，用户输入剪刀、石头或布，与计算机的出拳进行比较，判断胜负 */
+
+      var game = prompt("请输入石头或者剪刀或者布");
+
+      if (game !== "石头" && game !== "剪刀" && game !== "布") {
+        console.log("game", game === "石头");
+        alert("请输入石头或者剪刀或者布");
+      } else {
+        var obj = {
+          1: "石头",
+          2: "剪刀",
+          3: "布",
+        };
+        var random = Math.ceil(Math.random() * 3);
+
+        if (
+          (game === "石头" && obj[random] === "剪刀") ||
+          (game === "剪刀" && obj[random] === "布") ||
+          (game === "布" && obj[random] === "石头")
+        ) {
+          alert(`机器人: ${obj[random]}，你赢了`);
+        } else if (game === obj[random]) {
+          alert(`机器人: ${obj[random]}，平局`);
+        } else {
+          alert(`机器人: ${obj[random]}，你输了`);
+        }
+      }
+    </script>
+  </body>
+</html>
