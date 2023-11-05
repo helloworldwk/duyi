@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 用*号输出一个5行的等腰三角形
+
+            *
+           ***
+          *****
+         *******
+        *********
+      */
+
+      var r = 15;
+      var str = "";
+
+      for (var i = 1; i <= r; i++) {
+        if (i > 1) {
+          str += "<br>";
+        }
+
+        // 拼接空格
+        for (var j = 1; j <= r - i; j++) {
+          str += "&nbsp;";
+        }
+
+        // 拼接*号
+        for (var k = 1; k <= 2 * i - 1; k++) {
+          str += "*";
+        }
+      }
+
+      document.write(str);
+    </script>
+  </body>
+</html>

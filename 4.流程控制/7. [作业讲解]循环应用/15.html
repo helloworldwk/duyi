@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 将猜拳游戏升级，记录系统和玩家的积分，获胜者加1分，平局和输者不计分
+
+      var player = 0,
+        system = 0,
+        html = "游戏开始";
+      var obj = {
+        1: "石头",
+        2: "剪刀",
+        3: "布",
+      };
+      for (var i = 1; i <= 5; i++) {
+        var playerFist = obj[Math.ceil(Math.random() * 3)];
+        var systemFist = obj[Math.ceil(Math.random() * 3)];
+        var isWhoWin = "";
+
+        html += `<br>
+        ==============第${i}轮==============
+        <br>
+        系统：${system}分，玩家：${player}分
+        <br>
+        你的出拳：${playerFist}
+        <br>
+        系统出拳：${systemFist}
+        <br>
+      `;
+
+        if (
+          (playerFist === "石头" && systemFist === "剪刀") ||
+          (playerFist === "剪刀" && systemFist === "布") ||
+          (playerFist === "布" && systemFist === "石头")
+        ) {
+          player++;
+          isWhoWin = "player";
+        } else if (
+          (playerFist === "石头" && systemFist === "石头") ||
+          (playerFist === "剪刀" && systemFist === "剪刀") ||
+          (playerFist === "布" && systemFist === "布")
+        ) {
+          isWhoWin = "平局";
+        } else {
+          system++;
+          isWhoWin = "system";
+        }
+
+        html += `${
+          isWhoWin === "player"
+            ? "你赢了！"
+            : isWhoWin === "system"
+            ? "你输了！"
+            : "平局"
+        }`;
+      }
+
+      html += `
+      <br>
+      ==============游戏结束==============
+      <br>
+      系统：${player}分，玩家：${system}分
+    `;
+
+      document.write(html);
+    </script>
+  </body>
+</html>
