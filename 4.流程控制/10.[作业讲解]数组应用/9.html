@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 有一个数组，存放了一些数字，找出出现频率最高的数字
+      var arr = [
+        1, 1, 1, 1, 1, 5, 5, 5, 6, 7, 8, 9, 123, 123, 123, 123, 123, 123, 123,
+        123, 123, 1, 5, 5, 78,
+      ];
+      var obj = {};
+
+      for (var i = 0; i < arr.length; i++) {
+        if (!(arr[i] in obj)) {
+          obj[arr[i]] = 1;
+          continue;
+        }
+
+        obj[arr[i]] += 1;
+      }
+
+      var result;
+      for (var prop in obj) {
+        if (!result || obj[prop] > result.frequency) {
+          result = {
+            number: prop,
+            frequency: obj[prop],
+          };
+        }
+      }
+
+      console.log(`${result.number}出现频率最高，出现${result.frequency}次`);
+    </script>
+  </body>
+</html>

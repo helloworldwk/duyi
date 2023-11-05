@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 提示用户输入数组的长度，以及数组每一项的值，然后输出该数组
+      var length = +prompt("请输入数组的长度");
+
+      if (length > 0) {
+        var arr = new Array(length);
+        for (var i = 0; i < arr.length; i++) {
+          arr[i] = prompt(`请输入数组里第${i + 1}项的值`);
+        }
+
+        console.log("arr", arr);
+      }
+    </script>
+  </body>
+</html>
