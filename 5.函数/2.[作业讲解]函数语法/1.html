@@ -5,5 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <script src="../../common/js/MyFunction.js"></script>
+    <script>
+      /**
+       * 利用上面的某些函数，实现哥德巴赫猜想
+         任一大于2的偶数都可写成两个质数之和，比如：8 = 3 + 5
+
+        让用户输入一个大于2的整数，输出其等于哪两个素数相加
+       */
+
+      var number = +prompt("请输入一个大于2的偶数");
+      if (!(number <= 2) && number % 2 === 0) {
+        var arr = [];
+        for (var i = 2; i <= number - 1; i++) {
+          if (isPrime(i)) {
+            // 是素数
+            arr.push(i);
+          }
+        }
+        console.log(arr);
+        for (var k = 0; k <= arr.length - 1; k++) {
+          for (var j = k; j <= arr.length - 1; j++) {
+            if (arr[k] + arr[j] === number) {
+              console.log(`${number} = ${arr[k]} + ${arr[j]}`);
+              break;
+            }
+          }
+        }
+      }
+    </script>
+  </body>
 </html>

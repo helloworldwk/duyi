@@ -9,15 +9,13 @@ function isPrime(num) {
     return false;
   }
 
-  var isFind = false;
   for (var i = 2; i < num; i++) {
     if (num % i === 0) {
-      isFind = true;
-      break;
+      return false;
     }
   }
 
-  return !isFind;
+  return true;
 }
 
 // 写一个函数，该函数用于对数组求和

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="../../common/js/MyFunction.js"></script>
+    <script>
+      // 让用户输入一个年份，输出该年每个月的天数
+      var year = +prompt("请输入一个年份");
+      if (isNaN(year)) {
+        console.log("年份不正确");
+      } else {
+        for (var i = 1; i <= 12; i++) {
+          console.log(`${year}年${i}月的天数是:` + getDays(year, i));
+        }
+      }
+    </script>
+  </body>
+</html>
